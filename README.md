@@ -15,7 +15,7 @@ The application computes the optimal route between metro stations and visually d
 
 ## 🖼️ Application Preview
 
-![Metro Path Finder Screenshot](./screenshot.png)
+![Metro Path Finder Screenshot](./Screenshot.png)
 
 ---
 
@@ -67,8 +67,8 @@ O(V²) (Adjacency Matrix implementation)
 
 ##  How to Run Locally
 1. Clone the repository
-
 git clone https://github.com/chiranthdv/Metro_Path_Finder.git
+
 2. Open `index.html` in your browser.
 
 No build step required.
