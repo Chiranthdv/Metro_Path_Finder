@@ -1,84 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metro Path Finder</title>
-    <style>
-        /* Basic styling for better layout */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .input-group {
-            margin-bottom: 10px;
-        }
-        label {
-            font-weight: bold;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        #result {
-            margin-top: 20px;
-        }
-        #showAllBtn {
-            margin-top: 10px;
-            background-color: #4CAF50;
-            color: white;
-        }
-        button {
-    background-color: #2196F3; /* Blue for all buttons */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.85;
-}
-
-#showAllBtn {
-    background-color: #4CAF50; /* Override only this one as green */
-}
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metro Navigator</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Metro Path Finder</h1>
-    <div class="container">
-        <div class="input-group">
-            <label for="source">Source Station:</label>
-            <input type="text" id="source" placeholder="Enter Source Station">
-        </div>
-        <div class="input-group">
-            <label for="destination">Destination Station (Optional):</label>
-            <input type="text" id="destination" placeholder="Enter Destination Station">
-        </div>
-        <button id="findPathButton">Find Path</button>
-        <button id="showAllBtn" style="display:none;">Show All Paths</button>
-        <div id="result"></div>
-    </div>
 
-    <script src="script.js"></script>
+<body>
+
+<div class="app-bg"></div>
+
+<div class="container">
+
+  <h1>🚇 Metro Navigator</h1>
+
+  <div class="input-group">
+    <label>From</label>
+    <input id="source" placeholder="Enter source station" autocomplete="off">
+    <div id="sourceSuggestions" class="suggestions"></div>
+  </div>
+
+  <div class="input-group">
+    <label>To</label>
+    <input id="destination" placeholder="Enter destination station" autocomplete="off">
+    <div id="destinationSuggestions" class="suggestions"></div>
+  </div>
+
+  <div class="mode-toggle">
+    <label><input type="radio" name="mode" value="shortest" checked> Shortest</label>
+    <label><input type="radio" name="mode" value="interchange"> Min Interchange</label>
+  </div>
+
+  <button id="findPathButton">Find Route</button>
+
+  <div id="summaryCard" class="summary-card" style="display:none;"></div>
+  <div id="routeVisual" class="route-visual"></div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
